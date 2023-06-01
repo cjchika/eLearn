@@ -69,7 +69,7 @@ class _WelcomeState extends State<Welcome> {
                           color: Colors.blue.withOpacity(0.5),
                           size: const Size.square(8.0),
                           activeColor: Colors.blue,
-                          activeSize: const Size(10.0, 10.0),
+                          activeSize: const Size(16.0, 10.0),
                           activeShape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5.0)),
                         ),

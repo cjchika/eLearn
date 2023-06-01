@@ -4,6 +4,7 @@ import 'package:elearn_app/app_states.dart';
 
 class AppBlocks extends Bloc<AppEvents, AppStates> {
   AppBlocks():super(InitStates()){
+    print("app block");
     on<Increment>((event, emit) {
       emit(AppStates(counter: state.counter+1));
     });

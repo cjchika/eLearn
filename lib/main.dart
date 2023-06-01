@@ -31,22 +31,23 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             home: const Welcome(),
+            routes: {
+              "myHomePage":(context)=> const MyHomePage(),
+            },
           ),
         ));
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
+        title: const Text("Home"),
       ),
       body: Center(child: BlocBuilder<AppBlocks, AppStates>(
         builder: (context, state) {
@@ -68,12 +69,14 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           FloatingActionButton(
+            heroTag: "heroPlus",
             onPressed: () =>
                 BlocProvider.of<AppBlocks>(context).add(Increment()),
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
+            heroTag: "heroMinus",
             onPressed: () =>
                 BlocProvider.of<AppBlocks>(context).add(Decrement()),
             tooltip: 'Decrement',

@@ -18,10 +18,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => WelcomeBloc(),
-      child: ScreenUtilInit(builder: (context, child) =>
-          MaterialApp(
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => WelcomeBloc()),
+          BlocProvider(create: (context) => AppBlocks())
+        ],
+        child: ScreenUtilInit(
+          builder: (context, child) => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -29,8 +32,7 @@ class MyApp extends StatelessWidget {
             ),
             home: const Welcome(),
           ),
-      )
-    );
+        ));
   }
 }
 

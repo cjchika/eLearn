@@ -1,4 +1,5 @@
 import 'package:elearn_app/app_states.dart';
+import 'package:elearn_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:elearn_app/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:elearn_app/app_blocs.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppBlocks(),
+      create: (context) => WelcomeBloc(),
       child: ScreenUtilInit(builder: (context, child) =>
           MaterialApp(
             debugShowCheckedModeBanner: false,

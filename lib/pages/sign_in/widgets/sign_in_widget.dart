@@ -59,10 +59,11 @@ Widget reusableText(String text) {
   );
 }
 
-Widget buildTextField(String text, String textType) {
+Widget buildTextField(String hintText, String textType, String iconName) {
   return Container(
       width: 325.w,
       height: 50.h,
+      margin: EdgeInsets.only(bottom: 20.h),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(
@@ -75,7 +76,7 @@ Widget buildTextField(String text, String textType) {
             width: 16.w,
             height: 16.h,
             margin: EdgeInsets.only(left: 17.w),
-            child: Image.asset("assets/icons/user.png"),
+            child: Image.asset("assets/icons/$iconName.png"),
           ),
           Container(
             width: 270.w,
@@ -83,7 +84,7 @@ Widget buildTextField(String text, String textType) {
             child: TextField(
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
-                hintText: "Enter your email address",
+                hintText: hintText,
                 border: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.transparent),
                 ),
@@ -100,6 +101,13 @@ Widget buildTextField(String text, String textType) {
                   color: Colors.grey.withOpacity(0.5),
                 ),
               ),
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.normal,
+                  fontSize: 14.sp),
+              autocorrect: false,
+              obscureText: textType == "password" ? true: false,
             ),
           )
         ],

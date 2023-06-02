@@ -107,9 +107,60 @@ Widget buildTextField(String hintText, String textType, String iconName) {
                   fontWeight: FontWeight.normal,
                   fontSize: 14.sp),
               autocorrect: false,
-              obscureText: textType == "password" ? true: false,
+              obscureText: textType == "password" ? true : false,
             ),
           )
         ],
       ));
+}
+
+Widget forgotPassword() {
+  return Container(
+    margin: EdgeInsets.only(left: 25.w),
+    width: 260.w,
+    height: 44.h,
+    child: GestureDetector(
+      onTap: () {},
+      child: const Text(
+        "Forgot Password?",
+        style: TextStyle(
+          color: Colors.black,
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.blue,
+        ),
+      ),
+    ),
+  );
+}
+
+Widget buildLoginAndSignupButton(String buttonText, String buttonType) {
+  return GestureDetector(
+    onTap: () {},
+    child: Container(
+      width: 325.w,
+      height: 50.h,
+      margin: EdgeInsets.only(
+          left: 25.w, right: 25.w, top: buttonType == "login" ? 40.h : 10.h),
+      decoration: BoxDecoration(
+        color: Colors.blue,
+        borderRadius: BorderRadius.circular(15.w),
+        boxShadow: [
+          BoxShadow(
+            spreadRadius: 1,
+            blurRadius: 2,
+            offset: const Offset(0, 1),
+            color: Colors.grey.withOpacity(0.1),
+          )
+        ],
+      ),
+      child: Center(
+          child: Text(
+        buttonText,
+        style: TextStyle(
+            fontSize: 16.sp,
+            color: Colors.white,
+            fontWeight: FontWeight.normal),
+      )),
+    ),
+  );
 }

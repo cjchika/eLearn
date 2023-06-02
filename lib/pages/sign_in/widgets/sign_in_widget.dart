@@ -20,3 +20,26 @@ AppBar buildAppBar() {
     ),
   );
 }
+
+Widget buildThirdPartyLogin(BuildContext context) {
+  return Container(
+    child: Row(
+      children: [
+        _reusableIcons("google"),
+        _reusableIcons('apple'),
+        _reusableIcons('facebook')
+      ],
+    ),
+  );
+}
+
+Widget _reusableIcons(String iconName) {
+  return GestureDetector(
+    onTap: () {},
+    child: SizedBox(
+      width: 40.w,
+      height: 40.h,
+      child: Image.asset("assets/icons/$iconName.png"),
+    ),
+  );
+}

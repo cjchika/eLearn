@@ -16,7 +16,14 @@ class _SignInState extends State<SignIn> {
       child: SafeArea(
           child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: buildAppBar()
+        appBar: buildAppBar(),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              buildThirdPartyLogin(context),
+            ],
+          ),
+        ),
       )),
     );
   }

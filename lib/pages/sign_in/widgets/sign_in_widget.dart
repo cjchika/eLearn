@@ -84,6 +84,7 @@ Widget buildTextField(String hintText, String textType, String iconName) {
             width: 270.w,
             height: 50.h,
             child: TextField(
+
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                 hintText: hintText,

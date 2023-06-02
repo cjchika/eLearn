@@ -23,7 +23,9 @@ AppBar buildAppBar() {
 
 Widget buildThirdPartyLogin(BuildContext context) {
   return Container(
+    margin: EdgeInsets.only(top: 40.h, bottom: 20.h),
     child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         _reusableIcons("google"),
         _reusableIcons('apple'),
@@ -40,6 +42,19 @@ Widget _reusableIcons(String iconName) {
       width: 40.w,
       height: 40.h,
       child: Image.asset("assets/icons/$iconName.png"),
+    ),
+  );
+}
+
+Widget reusableText(String text) {
+  return Container(
+    margin: EdgeInsets.only(bottom: 5.h),
+    child: Text(
+      text,
+      style: TextStyle(
+          color: Colors.grey.withOpacity(0.5),
+          fontWeight: FontWeight.normal,
+          fontSize: 14.sp),
     ),
   );
 }

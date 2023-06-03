@@ -4,8 +4,7 @@ class SignUpStates {
   final String password;
   final String confirmPassword;
 
-  const SignUpStates(
-      this.userName, this.email, this.password, this.confirmPassword);
+  const SignUpStates({this.userName="", this.email="", this.password="", this.confirmPassword=""});
 
   SignUpStates copyWith(
       {String? userName,
@@ -13,10 +12,10 @@ class SignUpStates {
       String? password,
       String? confirmPassword}) {
     return SignUpStates(
-      userName ?? this.userName,
-      email ?? this.email,
-      password ?? this.password,
-      confirmPassword ?? this.confirmPassword,
+      userName: userName ?? this.userName,
+      email: email?? this.email,
+      password: password?? this.password,
+      confirmPassword: confirmPassword?? this.confirmPassword,
     );
   }
 }

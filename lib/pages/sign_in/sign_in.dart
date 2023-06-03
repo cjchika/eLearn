@@ -1,6 +1,7 @@
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_events.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_states.dart';
+import 'package:elearn_app/pages/sign_in/sign_in_controller.dart';
 import 'package:elearn_app/pages/sign_in/widgets/sign_in_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -53,8 +54,12 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     forgotPassword(),
-                    buildLoginAndSignupButton("Login", "login"),
-                    buildLoginAndSignupButton("Sign up", "signup"),
+                    buildLoginAndSignupButton("Login", "login", () {
+                      SignInController(context: context).handleSignIn("email");
+                    }),
+                    buildLoginAndSignupButton("Sign up", "signup", () {
+                      print("Signup button");
+                    }),
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_blocs.dart';
+import 'package:elearn_app/pages/sign_in/bloc/sign_in_events.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_states.dart';
 import 'package:elearn_app/pages/sign_in/widgets/sign_in_widget.dart';
 import 'package:flutter/material.dart';
@@ -37,10 +38,17 @@ class _SignInState extends State<SignIn> {
                         children: [
                           reusableText("Email"),
                           SizedBox(height: 5.h),
-                          buildTextField("Enter your email address", "email", "user"),
+                          buildTextField("Enter your email address", "email", "user",
+                            (value){
+                              context.read<SignInBloc>().add(EmailEvent(value));
+                            }
+                          ),
                           reusableText("Password"),
                           SizedBox(height: 5.h),
-                          buildTextField("Enter your password", "password", "lock")
+                          buildTextField("Enter your password", "password", "lock",
+                                  (value){
+                                context.read<SignInBloc>().add(PasswordEvent(value));
+                              })
                         ],
                       ),
                     ),

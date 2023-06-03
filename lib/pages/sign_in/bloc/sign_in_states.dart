@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class SignInState extends Equatable {
+class SignInState  {
   const SignInState({this.email = '', this.password = ''});
 
   final String email;
@@ -11,7 +11,7 @@ class SignInState extends Equatable {
         email: email ?? this.email, password: password ?? this.password);
   }
 
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  // @override
+  // // TODO: implement props
+  // List<Object?> get props => throw UnimplementedError();
 }

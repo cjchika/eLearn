@@ -2,6 +2,7 @@ import 'package:elearn_app/app_states.dart';
 import 'package:elearn_app/pages/bloc_providers.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:elearn_app/pages/sign_in/sign_in.dart';
+import 'package:elearn_app/pages/sign_up/sign_up.dart';
 import 'package:elearn_app/pages/welcome/bloc/welcome_blocs.dart';
 import 'package:elearn_app/pages/welcome/welcome.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
             routes: {
               "myHomePage":(context)=> const MyHomePage(),
               "signInPage":(context)=> const SignIn(),
+              "signUpPage":(context)=> const SignUp(),
             },
           ),
         ));

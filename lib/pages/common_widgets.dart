@@ -54,7 +54,7 @@ Widget reusableText(String text) {
     child: Text(
       text,
       style: TextStyle(
-          color: Colors.grey.withOpacity(0.5),
+          color: Colors.grey.withOpacity(0.8),
           fontWeight: FontWeight.normal,
           fontSize: 14.sp),
     ),
@@ -101,7 +101,7 @@ Widget buildTextField(String hintText, String textType, String iconName, void Fu
                   borderSide: BorderSide(color: Colors.transparent),
                 ),
                 hintStyle: TextStyle(
-                  color: AppColors.primarySecondaryElementText,
+                  color: AppColors.primaryFourElementText,
                 ),
               ),
               style: TextStyle(

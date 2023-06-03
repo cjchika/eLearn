@@ -10,18 +10,22 @@ class SignUpBlocs extends Bloc<SignUpEvents, SignUpStates> {
     on<ConfirmPasswordEvents>(_confirmPasswordEvent);
   }
   void _userNameEvent(UserNameEvents event, Emitter<SignUpStates> emit){
+    print("${event.userName}");
     emit(state.copyWith(userName: event.userName));
   }
 
   void _emailEvent(EmailEvents event, Emitter<SignUpStates> emit){
+    print("${event.email}");
     emit(state.copyWith(email: event.email));
   }
 
   void _passwordEvent(PasswordEvents event, Emitter<SignUpStates> emit){
+    print("${event.password}");
     emit(state.copyWith(password: event.password));
   }
 
   void _confirmPasswordEvent(ConfirmPasswordEvents event, Emitter<SignUpStates> emit){
+    print("${event.confirmPassword}");
     emit(state.copyWith(confirmPassword: event.confirmPassword));
   }
 }

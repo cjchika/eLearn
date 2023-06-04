@@ -26,7 +26,7 @@ class _ApplicationPage extends State<ApplicationPage> {
           decoration:
               BoxDecoration(color: AppColors.primaryElement, boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2),
+              color: Colors.grey.withOpacity(0.3),
               spreadRadius: 1,
               blurRadius: 1
             ),

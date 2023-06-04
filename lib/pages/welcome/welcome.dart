@@ -90,8 +90,8 @@ class _WelcomeState extends State<Welcome> {
     return Column(
       children: [
         SizedBox(
-          width: 345.w,
-          height: 345.h,
+          width: 340.w,
+          height: 340.h,
           child: Image.asset(
             imagePath,
             fit: BoxFit.cover,
@@ -108,7 +108,7 @@ class _WelcomeState extends State<Welcome> {
           ),
         ),
         Container(
-          width: 375.w,
+          width: 370.w,
           padding: EdgeInsets.only(left: 30.w, right: 30.w),
           child: Text(
             subTitle,

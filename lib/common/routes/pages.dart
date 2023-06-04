@@ -1,5 +1,4 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:elearn_app/common/routes/routes.dart';
 import 'package:elearn_app/pages/application/application_page.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:elearn_app/pages/sign_in/sign_in.dart';
@@ -10,6 +9,7 @@ import 'package:flutter/material.dart';
 
 
 import '../../pages/welcome/welcome.dart';
+import 'names.dart';
 
 class AppPages {
   static List<PageEntity> routes(){

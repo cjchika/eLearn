@@ -1,6 +1,8 @@
 // import 'dart:math';
 
+import 'package:elearn_app/common/values/constant.dart';
 import 'package:elearn_app/common/widgets/flutter_toast.dart';
+import 'package:elearn_app/global.dart';
 import 'package:elearn_app/pages/sign_in/bloc/sign_in_blocs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -42,7 +44,9 @@ class SignInController {
           var user = credential.user;
           if (user != null) {
             // we got verified user from Firebase
-            print("User exists");
+            toastInfo(msg: "Login Success!");
+            // print("Login Success!");
+            Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456789");
             Navigator.of(context).pushNamedAndRemoveUntil("/application", (route) => false);
             return;
           } else {

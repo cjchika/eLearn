@@ -1,3 +1,4 @@
+import 'package:elearn_app/common/routes/pages.dart';
 import 'package:elearn_app/pages/application/application_page.dart';
 import 'package:elearn_app/pages/bloc_providers.dart';
 import 'package:elearn_app/pages/sign_in/sign_in.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: AppBlocProviders.allBlocProviders,
+        providers: [...AppPages.allBlocProviders(context)],
         child: ScreenUtilInit(
           builder: (context, child) => MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -32,11 +33,13 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const ApplicationPage(),
-            routes: {
-              "signInPage":(context)=> const SignIn(),
-              "signUpPage":(context)=> const SignUp(),
-            },
+            // home: const Welcome(),
+            // initialRoute: "/",
+            onGenerateRoute: AppPages.generateRouteSettings,
+            // routes: {
+            //   "signInPage":(context)=> const SignIn(),
+            //   "signUpPage":(context)=> const SignUp(),
+            // },
           ),
         ));
   }

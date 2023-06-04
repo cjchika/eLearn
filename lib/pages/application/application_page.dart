@@ -1,3 +1,4 @@
+import 'package:elearn_app/pages/application/widgets/application_widgets.dart';
 import 'package:flutter/material.dart';
 
 class ApplicationPage extends StatefulWidget {
@@ -14,7 +15,7 @@ class _ApplicationPage extends State<ApplicationPage> {
       color: Colors.white,
       child: SafeArea(
           child: Scaffold(
-        body: Text("Home"),
+        body: buildPage(0),
       )),
     );
   }

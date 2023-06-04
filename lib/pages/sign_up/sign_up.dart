@@ -1,6 +1,7 @@
 import 'package:elearn_app/pages/sign_up/bloc/signup_blocs.dart';
 import 'package:elearn_app/pages/sign_up/bloc/signup_events.dart';
 import 'package:elearn_app/pages/sign_up/bloc/signup_states.dart';
+import 'package:elearn_app/pages/sign_up/signup_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -70,7 +71,8 @@ class _SignUpState extends State<SignUp> {
                           "By creating an account, you have agreed with our terms and conditions."),
                     ),
                     buildLoginAndSignupButton("Sign up", "login", () {
-                      Navigator.of(context).pushNamed("signUpPage");
+                      // Navigator.of(context).pushNamed("signUpPage");
+                      SignUpController(context).handleEmailSignUp();
                     }),
                   ],
                 ),

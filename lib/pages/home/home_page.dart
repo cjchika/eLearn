@@ -23,6 +23,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             homePageText("Hello", color: AppColors.primaryThreeElementText),
             homePageText("CJ Chika", top: 5),
+            SizedBox(height: 20.h),
+            searchBox(),
           ],
         ),
       ),

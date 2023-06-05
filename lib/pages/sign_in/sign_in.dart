@@ -55,6 +55,7 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     forgotPassword(),
+                    SizedBox(height: 80.h),
                     buildLoginAndSignupButton("Login", "login", () {
                       SignInController(context: context).handleSignIn("email");
                     }),

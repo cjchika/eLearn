@@ -50,8 +50,8 @@ Widget searchBox() {
   return Row(
     children: [
       Container(
-        width: 300.w,
-        height: 50.h,
+        width: 275.w,
+        height: 45.h,
         decoration: BoxDecoration(
             color: AppColors.primaryBackground,
             borderRadius: BorderRadius.circular(15.h),
@@ -71,6 +71,7 @@ Widget searchBox() {
                 // onChanged: (value)=> func!(value),
                 keyboardType: TextInputType.multiline,
                 decoration: InputDecoration(
+                  contentPadding: EdgeInsets.fromLTRB(8, 5, 0, 5),
                   hintText: "Search for course",
                   border: const OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.transparent),
@@ -99,7 +100,20 @@ Widget searchBox() {
             )
           ],
         ),
-      )
+      ),
+      SizedBox(width: 5.w),
+      GestureDetector(
+        child: Container(
+          width: 45.w,
+          height: 45.h,
+          decoration: BoxDecoration(
+            color: AppColors.primaryElement,
+            borderRadius: BorderRadius.all(Radius.circular(13.w)),
+            border: Border.all(color: AppColors.primaryElement),
+          ),
+          child: Image.asset("assets/icons/options.png"),
+        ),
+      ),
     ],
   );
 }

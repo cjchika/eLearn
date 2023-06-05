@@ -35,7 +35,7 @@ class _SignUpState extends State<SignUp> {
                         child: reusableText(
                             "Enter your details below and sign up for free.")),
                     Container(
-                      margin: EdgeInsets.only(top: 40.h),
+                      margin: EdgeInsets.only(top: 60.h),
                       padding: EdgeInsets.only(left: 25.w, right: 25.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,6 +70,7 @@ class _SignUpState extends State<SignUp> {
                       child: reusableText(
                           "By creating an account, you have agreed with our terms and conditions."),
                     ),
+                    SizedBox(height: 25.h),
                     buildLoginAndSignupButton("Sign up", "login", () {
                       // Navigator.of(context).pushNamed("signUpPage");
                       SignUpController(context).handleEmailSignUp();

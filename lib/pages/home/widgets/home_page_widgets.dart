@@ -45,7 +45,7 @@ Widget homePageText(String text,
   );
 }
 
-// REUSABLE SEARCH BOX
+// SEARCH BOX
 Widget searchBox() {
   return Row(
     children: [
@@ -104,6 +104,7 @@ Widget searchBox() {
       SizedBox(width: 5.w),
       GestureDetector(
         child: Container(
+          padding: EdgeInsets.all(7.h),
           width: 45.w,
           height: 45.h,
           decoration: BoxDecoration(
@@ -114,6 +115,19 @@ Widget searchBox() {
           child: Image.asset("assets/icons/options.png"),
         ),
       ),
+    ],
+  );
+}
+
+// MENU SLIDER
+Widget sliderView() {
+  return Column(
+    children: [
+      Container(
+        width: 325.w,
+        height: 160.h,
+        child: PageView(),
+      )
     ],
   );
 }

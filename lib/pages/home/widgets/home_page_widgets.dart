@@ -119,15 +119,33 @@ Widget searchBox() {
   );
 }
 
-// MENU SLIDER
+// SLIDER VIEW
 Widget sliderView() {
-  return Column(
-    children: [
-      Container(
-        width: 325.w,
-        height: 160.h,
-        child: PageView(),
-      )
-    ],
+  return Container(
+    margin: EdgeInsets.only(top: 20.h),
+    width: 325.w,
+    height: 160.h,
+    child: PageView(
+      children: [
+        _sliderContainer(imagePath: "assets/icons/art.png"),
+        _sliderContainer(imagePath: "assets/icons/image_1.png"),
+        _sliderContainer(imagePath: "assets/icons/image_2.png"),
+      ],
+    ),
+  );
+}
+
+//SLIDER CONTAINER
+Widget _sliderContainer({String imagePath="assets/icons/art.png"}){
+  return Container(
+    width: 325.w,
+    height: 160.h,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(20.h)),
+      image: DecorationImage(
+        fit: BoxFit.fill,
+        image: AssetImage(imagePath),
+      ),
+    ),
   );
 }

@@ -53,7 +53,7 @@ class AppPages {
       // CHECKS FOR ROUTE NAME MATCHING WHEN NAVIGATOR GET TRIGGERED
       var result = routes().where((element) => element.route == settings.name);
       if (result.isNotEmpty) {
-        print("First Log");
+        // print("First Log");
         print(result.first.route);
         bool deviceFirstOpen = Global.storageService.getDeviceFirstOpen();
         if (result.first.route == AppRoutes.INITIAL && deviceFirstOpen) {

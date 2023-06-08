@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                 homePageText("CJ Chika", top: 5),
                 SizedBox(height: 20.h),
                 searchBox(),
-                sliderView(),
+                sliderView(context, state),
               ],
             ),
           );

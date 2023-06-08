@@ -155,7 +155,7 @@ Widget sliderView() {
 }
 
 //SLIDER CONTAINER
-Widget _sliderContainer({String imagePath = "assets/icons/art.png"}) {
+Widget _sliderContainer({required String imagePath}) {
   return Container(
     width: 325.w,
     height: 160.h,

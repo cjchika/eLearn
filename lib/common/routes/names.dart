@@ -7,4 +7,6 @@ class AppRoutes {
   static const SIGNIN = "/sign_in";
   // SIGNUP PAGE
   static const SIGNUP = "/sign_up";
+  // SIGNUP PAGE
+  static const HOME_PAGE = "/home";
 }

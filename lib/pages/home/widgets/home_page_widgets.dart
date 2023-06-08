@@ -133,7 +133,7 @@ Widget sliderView(BuildContext context, HomePageStates state) {
         width: 325.w,
         height: 160.h,
         child: PageView(
-          onPageChanged: (value){
+          onPageChanged: (value) {
             context.read<HomePageBlocs>().add(HomePageDots(value));
           },
           children: [
@@ -172,6 +172,60 @@ Widget _sliderContainer({required String imagePath}) {
         fit: BoxFit.fill,
         image: AssetImage(imagePath),
       ),
+    ),
+  );
+}
+
+// MENU VIEW
+Widget menuView() {
+  return Column(
+    children: [
+      Container(
+        width: 325.w,
+        margin: EdgeInsets.only(top: 15.h),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            _reusableMenuText("Choose your course"),
+            GestureDetector(
+                child: _reusableMenuText("See all",
+                    color: AppColors.primaryThreeElementText, fontSize: 12)),
+          ],
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.only(top: 20.w),
+        child: Row(
+
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                  color: AppColors.primaryElement,
+                  borderRadius: BorderRadius.circular(7.w),
+                  border: Border.all(color: AppColors.primaryElement)),
+              child: _reusableMenuText("All",
+                  color: AppColors.primaryElementText,
+                  fontWeight: FontWeight.normal, fontSize: 12),
+              padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 5.h, top: 5.h),
+            ),
+
+          ],
+        ),
+      )
+    ],
+  );
+}
+
+Widget _reusableMenuText(String text,
+    {Color color = AppColors.primaryText,
+    int fontSize = 16,
+    FontWeight fontWeight = FontWeight.bold}) {
+  return Container(
+    child: Text(
+      text,
+      style: TextStyle(
+          color: color, fontWeight: fontWeight, fontSize: fontSize.sp),
     ),
   );
 }

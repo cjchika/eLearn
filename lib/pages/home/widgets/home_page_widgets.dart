@@ -187,9 +187,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableMenuText("Choose your course"),
+            _reusableText("Choose your course"),
             GestureDetector(
-                child: _reusableMenuText("See all",
+                child: _reusableText("See all",
                     color: AppColors.primaryThreeElementText, fontSize: 12)),
           ],
         ),
@@ -197,19 +197,12 @@ Widget menuView() {
       Container(
         margin: EdgeInsets.only(top: 20.w),
         child: Row(
-
           children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: AppColors.primaryElement,
-                  borderRadius: BorderRadius.circular(7.w),
-                  border: Border.all(color: AppColors.primaryElement)),
-              child: _reusableMenuText("All",
-                  color: AppColors.primaryElementText,
-                  fontWeight: FontWeight.normal, fontSize: 12),
-              padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 5.h, top: 5.h),
-            ),
-
+            _reusableMenuText("All"),
+            _reusableMenuText("Popular",
+                textColor: AppColors.primaryThreeElementText, backgroundColor: Colors.white),
+            _reusableMenuText("Newest",
+                textColor: AppColors.primaryThreeElementText, backgroundColor: Colors.white),
           ],
         ),
       )
@@ -217,7 +210,7 @@ Widget menuView() {
   );
 }
 
-Widget _reusableMenuText(String text,
+Widget _reusableText(String text,
     {Color color = AppColors.primaryText,
     int fontSize = 16,
     FontWeight fontWeight = FontWeight.bold}) {
@@ -227,5 +220,21 @@ Widget _reusableMenuText(String text,
       style: TextStyle(
           color: color, fontWeight: fontWeight, fontSize: fontSize.sp),
     ),
+  );
+}
+
+// REUSABLE MENU TEXT
+Widget _reusableMenuText(String menuText,
+    {Color textColor = AppColors.primaryElementText,
+    Color backgroundColor = AppColors.primaryElement}) {
+  return Container(
+    margin: EdgeInsets.only(right: 20.w),
+    decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(7.w),
+        border: Border.all(color: backgroundColor)),
+    child: _reusableText(menuText,
+        color: textColor, fontWeight: FontWeight.normal, fontSize: 12),
+    padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 5.h, top: 5.h),
   );
 }

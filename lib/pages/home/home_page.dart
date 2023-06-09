@@ -21,18 +21,37 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       appBar: buildAppBar(),
       body: BlocBuilder<HomePageBlocs, HomePageStates>(
-        builder: (context, state){
+        builder: (context, state) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                homePageText("Hello", color: AppColors.primaryThreeElementText),
-                homePageText("CJ Chika", top: 5),
-                SizedBox(height: 20.h),
-                searchBox(),
-                sliderView(context, state),
-                menuView(),
+            child: CustomScrollView(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              slivers: [
+                SliverToBoxAdapter(
+                    child: homePageText("Hello",
+                        color: AppColors.primaryThreeElementText)),
+                SliverToBoxAdapter(child: homePageText("CJ Chika", top: 5)),
+                SliverPadding(padding: EdgeInsets.only(top: 20.h)),
+                SliverToBoxAdapter(child: searchBox()),
+                SliverToBoxAdapter(child: sliderView(context, state)),
+                SliverToBoxAdapter(child: menuView()),
+                SliverPadding(
+                  padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 0.w),
+                  sliver: SliverGrid(
+                    delegate: SliverChildBuilderDelegate(childCount: 4,
+                        (context, index) {
+                      return Container(
+                          width: 100, height: 100, color: Colors.red);
+                    }),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                      childAspectRatio: 1.6,
+                    ),
+                  ),
+                ),
               ],
             ),
           );

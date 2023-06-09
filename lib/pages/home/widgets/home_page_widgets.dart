@@ -238,3 +238,43 @@ Widget _reusableMenuText(String menuText,
     padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 5.h, top: 5.h),
   );
 }
+
+Widget courseGrid(){
+  return Container(
+    padding: EdgeInsets.all(12.w),
+    decoration: const BoxDecoration(
+      image: DecorationImage(
+          fit: BoxFit.fill,
+          image: AssetImage("assets/icons/image_2.png")),
+    ),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Best Course for IT and",
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          style: TextStyle(
+              color: AppColors.primaryElementText,
+              fontWeight: FontWeight.bold,
+              fontSize: 11.sp),
+        ),
+        SizedBox(height: 2.h),
+        Text(
+          "Flutter Best Course ",
+          maxLines: 1,
+          overflow: TextOverflow.fade,
+          textAlign: TextAlign.left,
+          softWrap: false,
+          style: TextStyle(
+              color: AppColors.primaryFourElementText,
+              fontWeight: FontWeight.normal,
+              fontSize: 10.sp),
+        )
+      ],
+    ),
+  );
+}

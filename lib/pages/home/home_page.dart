@@ -36,12 +36,15 @@ class _HomePageState extends State<HomePage> {
                 SliverToBoxAdapter(child: sliderView(context, state)),
                 SliverToBoxAdapter(child: menuView()),
                 SliverPadding(
-                  padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 0.w),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 0.w),
                   sliver: SliverGrid(
                     delegate: SliverChildBuilderDelegate(childCount: 4,
                         (context, index) {
-                      return Container(
-                          width: 100, height: 100, color: Colors.red);
+                      return GestureDetector(
+                        onTap: () {},
+                        child: courseGrid(),
+                      );
                     }),
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(

@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/widgets/basic_text_widget.dart';
+
 AppBar buildAppBar() {
   return AppBar(
     backgroundColor: Colors.white,
@@ -188,9 +190,9 @@ Widget menuView() {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            _reusableText("Choose your course"),
+            reusableTextGlobal("Choose your course"),
             GestureDetector(
-                child: _reusableText("See all",
+                child: reusableTextGlobal("See all",
                     color: AppColors.primaryThreeElementText, fontSize: 12)),
           ],
         ),
@@ -211,19 +213,6 @@ Widget menuView() {
   );
 }
 
-Widget _reusableText(String text,
-    {Color color = AppColors.primaryText,
-    int fontSize = 16,
-    FontWeight fontWeight = FontWeight.bold}) {
-  return Container(
-    child: Text(
-      text,
-      style: TextStyle(
-          color: color, fontWeight: fontWeight, fontSize: fontSize.sp),
-    ),
-  );
-}
-
 // REUSABLE MENU TEXT
 Widget _reusableMenuText(String menuText,
     {Color textColor = AppColors.primaryElementText,
@@ -234,7 +223,7 @@ Widget _reusableMenuText(String menuText,
         color: backgroundColor,
         borderRadius: BorderRadius.circular(7.w),
         border: Border.all(color: backgroundColor)),
-    child: _reusableText(menuText,
+    child: reusableTextGlobal(menuText,
         color: textColor, fontWeight: FontWeight.normal, fontSize: 12),
     padding: EdgeInsets.only(left: 15.w, right: 15.w, bottom: 5.h, top: 5.h),
   );

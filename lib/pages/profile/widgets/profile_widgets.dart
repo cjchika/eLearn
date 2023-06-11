@@ -1,5 +1,6 @@
 import 'package:elearn_app/common/routes/names.dart';
 import 'package:elearn_app/common/values/colors.dart';
+import 'package:elearn_app/common/widgets/basic_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,13 +15,7 @@ AppBar buildAppbar() {
             height: 12.h,
             child: Image.asset("assets/icons/menu.png"),
           ),
-          Text(
-            "Profile",
-            style: TextStyle(
-                color: AppColors.primaryText,
-                fontWeight: FontWeight.bold,
-                fontSize: 16.sp),
-          ),
+          reusableTextGlobal("Profile"),
           SizedBox(
             width: 24.w,
             height: 24.h,

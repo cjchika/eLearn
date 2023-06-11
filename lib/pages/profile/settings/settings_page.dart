@@ -1,3 +1,5 @@
+import 'package:elearn_app/common/values/constant.dart';
+import 'package:elearn_app/global.dart';
 import 'package:elearn_app/pages/profile/settings/bloc/settings_blocs.dart';
 import 'package:elearn_app/pages/profile/settings/widgets/settings_widget.dart';
 import 'package:flutter/material.dart';
@@ -29,9 +31,21 @@ class _SettingsPageState extends State<SettingsPage> {
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
-                        return const AlertDialog(
-                          title: Text("Confirm logout"),
-                          content: Text("Are you sure you want to logout?"),
+                        return AlertDialog(
+                          title: const Text("Confirm logout"),
+                          content: const Text("Are you sure you want to logout?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                Global.storageService.remove(AppConstants.STORAGE_USER_PROFILE_KEY);
+                              },
+                              child: const Text("Confirm"),
+                            ),
+                          ],
                         );
                       });
                 },

@@ -1,5 +1,8 @@
+import 'package:elearn_app/common/routes/routes.dart';
 import 'package:elearn_app/common/values/constant.dart';
 import 'package:elearn_app/global.dart';
+import 'package:elearn_app/pages/application/bloc/app_blocs.dart';
+import 'package:elearn_app/pages/application/bloc/app_events.dart';
 import 'package:elearn_app/pages/profile/settings/bloc/settings_blocs.dart';
 import 'package:elearn_app/pages/profile/settings/widgets/settings_widget.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +19,12 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  void triggerLogout(){
+    context.read<AppBlocs>().add(const TriggerAppEvent(0));
+    Global.storageService.remove(AppConstants.STORAGE_USER_TOKEN_KEY);
+    Navigator.of(context).pushNamedAndRemoveUntil(AppRoutes.SIGNIN, (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,39 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
         return Container(
           child: Column(
             children: [
-              GestureDetector(
-                onTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return AlertDialog(
-                          title: const Text("Confirm logout"),
-                          content: const Text("Are you sure you want to logout?"),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.of(context).pop(),
-                              child: const Text("Cancel"),
-                            ),
-                            TextButton(
-                              onPressed: () {
-                                Global.storageService.remove(AppConstants.STORAGE_USER_PROFILE_KEY);
-                              },
-                              child: const Text("Confirm"),
-                            ),
-                          ],
-                        );
-                      });
-                },
-                child: Container(
-                  height: 100.w,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fitHeight,
-                      image: AssetImage("assets/icons/Logout.png"),
-                    ),
-                  ),
-                ),
-              ),
+              settingsButton(context, triggerLogout),
             ],
           ),
         );
